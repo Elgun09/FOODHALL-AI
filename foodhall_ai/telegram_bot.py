@@ -19,7 +19,7 @@ async def chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
     answer = ask_gpt(question)
     await update.message.reply_text(answer)
 
-def create_bot(token):
+def создать_бот(token):
     app = Application.builder().token(token).build()
 
     app.add_handler(CommandHandler("start", start))
