@@ -1,7 +1,12 @@
 from telegram import Update
-from telegram.ext import Application, CommandHandler, MessageHandler, ContextTypes, filters
+from telegram.ext import (
+    Application,
+    CommandHandler,
+    MessageHandler,
+    ContextTypes,
+    filters,
+)
 
-from settings import TELEGRAM_TOKEN
 from openai_client import ask_gpt
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -11,15 +16,15 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
     question = update.message.text
-
     answer = ask_gpt(question)
-
     await update.message.reply_text(answer)
 
-def run_bot():
-    app = Application.builder().token(TELEGRAM_TOKEN).build()
+def create_bot(token):
+    app = Application.builder().token(token).build()
 
     app.add_handler(CommandHandler("start", start))
-    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, chat))
+    app.add_handler(
+        MessageHandler(filters.TEXT & ~filters.COMMAND, chat)
+    )
 
-    app.run_polling()
+    return app
