@@ -1,14 +1,11 @@
-from telegram_bot import create_bot
+from telegram_bot import создать_бот
 import os
 
-def main():
+def основной():
     token = os.getenv("TELEGRAM_BOT_TOKEN")
 
     if not token:
-        raise ValueError("TELEGRAM_BOT_TOKEN not found")
+        raise ValueError("TELEGRAM_BOT_TOKEN не найден")
 
-    app = create_bot(token)
+    app = создать_бот(token)
     app.run_polling()
-
-if __name__ == "__main__":
-    main()
