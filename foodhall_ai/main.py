@@ -1,5 +1,4 @@
-def main():
-    print("FOODHALL AI started")
+from run import основной
 
 if __name__ == "__main__":
-    main()
+    основной()
