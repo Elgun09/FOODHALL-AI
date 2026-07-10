@@ -1,11 +1,19 @@
-from openai import OpenAI
+from groq import Groq
+import os
 
-client = OpenAI()
+client = Groq(
+    api_key=os.getenv("OPENAI_API_KEY")
+)
 
-def ask_gpt(prompt: str) -> str:
-    response = client.responses.create(
-        model="gpt-5.5",
-        input=prompt,
+def ask_gpt(text: str) -> str:
+    response = client.chat.completions.create(
+        model="llama-3.3-70b-versatile",
+        messages=[
+            {
+                "role": "user",
+                "content": text
+            }
+        ]
     )
 
-    return response.output_text
+    return response.choices[0].message.content
