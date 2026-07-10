@@ -1,4 +1,3 @@
 python-telegram-bot==22.1
 python-dotenv
-groq
-openai
+groq==0.9.0
