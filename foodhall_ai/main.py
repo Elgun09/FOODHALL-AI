@@ -1,1 +1,133 @@
-import base64,gzip;exec(gzip.decompress(base64.b64decode("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")).decode("utf-8"))
+import logging
+import os
+
+from groq import AsyncGroq
+from telegram import Update
+from telegram.ext import (
+    Application,
+    CommandHandler,
+    ContextTypes,
+    MessageHandler,
+    filters,
+)
+
+MODEL = "openai/gpt-oss-20b"
+
+SYSTEM_PROMPT = """
+Ты — FOODHALL AI, цифровой помощник фудхолла и кофейни.
+Отвечай на русском языке, понятно и по делу.
+Помогай с блюдами, напитками, рецептами, сервисом,
+маркетингом и работой фудхолла.
+Не выдумывай цены, составы, акции и правила заведения.
+""".strip()
+
+logging.basicConfig(
+    format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
+    level=logging.INFO,
+)
+
+logger = logging.getLogger(__name__)
+
+
+async def start(
+    update: Update,
+    context: ContextTypes.DEFAULT_TYPE,
+) -> None:
+    user = update.effective_user
+    name = user.first_name if user and user.first_name else "Гость"
+
+    await update.effective_message.reply_text(
+        f"{name}, FOODHALL AI запущен. Задай вопрос."
+    )
+
+
+async def chat(
+    update: Update,
+    context: ContextTypes.DEFAULT_TYPE,
+) -> None:
+    message = update.effective_message
+
+    if not message or not message.text:
+        return
+
+    try:
+        async with AsyncGroq(
+            api_key=os.environ["GROQ_API_KEY"],
+            timeout=60.0,
+            max_retries=2,
+        ) as client:
+            response = await client.chat.completions.create(
+                model=MODEL,
+                messages=[
+                    {
+                        "role": "system",
+                        "content": SYSTEM_PROMPT,
+                    },
+                    {
+                        "role": "user",
+                        "content": message.text,
+                    },
+                ],
+                temperature=0.4,
+                max_completion_tokens=800,
+            )
+
+        answer = response.choices[0].message.content or (
+            "Groq вернул пустой ответ."
+        )
+
+        for index in range(0, len(answer), 4000):
+            await message.reply_text(
+                answer[index:index + 4000]
+            )
+
+    except Exception as error:
+        logger.exception(
+            "Ошибка при обработке сообщения: %s",
+            error,
+        )
+
+        await message.reply_text(
+            "Не удалось получить ответ. Проверь логи Railway."
+        )
+
+
+def main() -> None:
+    telegram_token = os.getenv("TELEGRAM_BOT_TOKEN")
+    groq_api_key = os.getenv("GROQ_API_KEY")
+
+    if not telegram_token:
+        raise RuntimeError("TELEGRAM_BOT_TOKEN не найден")
+
+    if not groq_api_key:
+        raise RuntimeError("GROQ_API_KEY не найден")
+
+    application = (
+        Application.builder()
+        .token(telegram_token)
+        .build()
+    )
+
+    application.add_handler(
+        CommandHandler("start", start)
+    )
+
+    application.add_handler(
+        MessageHandler(
+            filters.TEXT & ~filters.COMMAND,
+            chat,
+        )
+    )
+
+    logger.info(
+        "FOODHALL AI запущен. Модель: %s",
+        MODEL,
+    )
+
+    application.run_polling(
+        drop_pending_updates=True
+    )
+
+
+if __name__ == "__main__":
+    main()
