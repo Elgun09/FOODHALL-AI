@@ -14,6 +14,7 @@ from telegram.ext import (
     filters,
 )
 
+
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
 
@@ -29,12 +30,14 @@ SYSTEM_PROMPT = """
 Не выдумывай цены, составы, акции и правила заведения.
 """.strip()
 
+
 logging.basicConfig(
     format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
     level=logging.INFO,
 )
 
 logger = logging.getLogger(__name__)
+
 
 def ask_groq_sync(question: str) -> str:
     api_key = os.getenv("GROQ_API_KEY")
@@ -95,6 +98,7 @@ def ask_groq_sync(question: str) -> str:
 
     return answer
 
+
 async def start(
     update: Update,
     context: ContextTypes.DEFAULT_TYPE,
@@ -103,6 +107,7 @@ async def start(
         await update.effective_message.reply_text(
             "Привет! Я FOODHALL AI. Задай мне вопрос."
         )
+
 
 async def chat(
     update: Update,
@@ -131,6 +136,7 @@ async def chat(
             "Не удалось получить ответ. "
             "Проверь GROQ_API_KEY и логи Railway."
         )
+
 
 def main() -> None:
     telegram_token = os.getenv("TELEGRAM_BOT_TOKEN")
@@ -162,8 +168,8 @@ def main() -> None:
 
     application.add_handler(
         MessageHandler(
-            filters.TEXT & ~filters.COMMAND
-    chat,
+            filters.TEXT & ~filters.COMMAND,
+            chat,
         )
     )
 
@@ -172,6 +178,7 @@ def main() -> None:
     application.run_polling(
         drop_pending_updates=True
     )
+
 
 if __name__ == "__main__":
     main()
